@@ -29,18 +29,29 @@
                             <br>
                             <table class="table table-hover">
                                 <thead>
+                                    <tr>
                                         <th>NSS</th>
                                         <th>Paciente</th>
                                         <th>Fecha</th>
                                         <th>Horario</th>
                                         <th></th>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                    <td>1</td>
-                                    <td>Jorge Jiménez</td>
-                                    <td>Lunes - 18/05/2020</td>
-                                    <td>07:00 - 08:00</td>
-                                    <td><a href="" class="btn btn-danger">Cancelar Cita</a></td>
+                                    <tr>
+                                        <td>1712395</td>
+                                        <td>Jorge Jiménez</td>
+                                        <td>Lunes - 18/05/2020</td>
+                                        <td>07:00 - 08:00</td>
+                                        <td><a href="" class="btn btn-outline-danger btn-sm">Cancelar Cita</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2871240</td>
+                                        <td>Víctor Gonzalez</td>
+                                        <td>Lunes - 18/05/2020</td>
+                                        <td>07:00 - 08:00</td>
+                                        <td><a href="" class="btn btn-outline-danger btn-sm">Cancelar Cita</a></td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
