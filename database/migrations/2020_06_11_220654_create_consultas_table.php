@@ -19,8 +19,6 @@ class CreateConsultasTable extends Migration
             $table->bigInteger('id_enfermedad')->unsigned();
             $table->String('indicaciones');
             $table->timestamps();
-
-            $table->foreign('id_cita')->references('id_cita')->on('citas');
         });
     }
 

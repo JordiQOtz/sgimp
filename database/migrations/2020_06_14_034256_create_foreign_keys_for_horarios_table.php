@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCitasTable extends Migration
+class CreateForeignKeysForHorariosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateCitasTable extends Migration
      */
     public function up()
     {
-        Schema::create('citas', function (Blueprint $table) {
-            $table->bigIncrements('id_cita');
-            $table->bigInteger('id_horario')->unsigned();
-            $table->bigInteger('id_paciente')->unsigned();
-            $table->timestamps();
+        Schema::table('horarios', function (Blueprint $table) {
+            $table->foreign('id_medico')->references('id_medico')->on('medicos');
         });
     }
 
@@ -28,6 +25,8 @@ class CreateCitasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('citas');
+        Schema::table('horarios',function(Blueprint $table){
+            $table->dropForeign('horarios_id_medico_foreign');
+        });
     }
 }

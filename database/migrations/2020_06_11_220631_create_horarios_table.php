@@ -15,8 +15,9 @@ class CreateHorariosTable extends Migration
     {
         Schema::create('horarios', function (Blueprint $table) {
             $table->bigIncrements('id_horario');
+            $table->bigInteger('id_medico')->unsigned();
             $table->date('dia');
-            $table->int('hora',2);
+            $table->integer('hora');
             $table->boolean('disponibilidad');
             $table->timestamps();
         });
