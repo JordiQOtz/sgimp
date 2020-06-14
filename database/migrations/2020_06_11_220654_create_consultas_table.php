@@ -16,7 +16,7 @@ class CreateConsultasTable extends Migration
         Schema::create('consultas', function (Blueprint $table) {
             $table->bigIncrements('id_consulta');
             $table->bigInteger('id_cita')->unsigned();
-            $table->bigInteger('id_enfermedad')->unsigned();
+            $table->String('enfermedad');
             $table->String('indicaciones');
             $table->timestamps();
         });

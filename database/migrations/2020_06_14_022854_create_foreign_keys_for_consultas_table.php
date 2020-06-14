@@ -15,7 +15,6 @@ class CreateForeignKeysForConsultasTable extends Migration
     {
         Schema::table('consultas', function (Blueprint $table) {
             $table->foreign('id_cita')->references('id_cita')->on('citas');
-            $table->foreign('id_enfermedad')->references('id_enfermedad')->on('enfermedades');
         });
     }
 
@@ -28,7 +27,6 @@ class CreateForeignKeysForConsultasTable extends Migration
     {
         Schema::table('consultas', function (Blueprint $table){
             $table->dropForeign('consultas_id_cita_foreign');
-            $table->dropForeign('consultas_id_enfermedad_foreign');
         });
     }
 }
