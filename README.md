@@ -18,22 +18,22 @@ Levantar el servidor.
 ##### 2.2.1. Para linux
 Ejecutar los siguientes scripts en la terminal de linux:
 
-- Descargar el instalador en el directorio
+1. Descargar el instalador en el directorio
 ```
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 ```
 
-- Comprobar el SHA-384 del instalador
+2. Comprobar el SHA-384 del instalador
 ```
 php -r "if (hash_file('sha384', 'composer-setup.php') === e0012edf3e80b6978849f5eff0d4b4e4c79ff1609dd1e613307e16318854d24ae64f26d17af3ef0bf7cfb710ca74755a') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
 ```
 
-- Ejecutar el instalador
+3. Ejecutar el instalador
 ```
 php composer-setup.php --install-dir=bin
 ```
 
-- Eliminar el instalador
+4. Eliminar el instalador
 ```
 php -r "unlink('composer-setup.php');"
 ```
