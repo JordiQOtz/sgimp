@@ -54,5 +54,9 @@ Ejecutar el comando: php artisan serve
 #### 5. Ejecutar página
 Una vez que el servidor esté activo ingresar a:
 
+Servidor Laravel | Servidor XAMPP/WAMPP
+-----------------|----------------------
+'localhost:8000'|'localhost'
+
 - 'localhost:8000' -> para servidor de laravel
 - 'localhost' -> para servidor XAMPP/WAMPP
