@@ -42,20 +42,6 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>*1712395</td>
-                                        <td>Jorge Jiménez</td>
-                                        <td>Lunes - 18/05/2020</td>
-                                        <td>07:00 - 08:00</td>
-                                        <td><a href="" class="btn btn-outline-danger btn-sm">Cancelar Cita</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>*2871240</td>
-                                        <td>Víctor Gonzalez</td>
-                                        <td>Lunes - 18/05/2020</td>
-                                        <td>07:00 - 08:00</td>
-                                        <td><a href="" class="btn btn-outline-danger btn-sm">Cancelar Cita</a></td>
-                                    </tr>
                                     @if($citas ?? '')
                                         @foreach($citas as $i)
                                             <tr>
@@ -66,6 +52,8 @@
                                                 <td><a href="{{url('cita/delete/'.$i->id_cita)}}" class="btn btn-outline-danger btn-sm">Cancelar Cita</a></td>
                                             </tr>
                                         @endforeach
+                                    @else
+                                        <tr><td colspan=4 alert alert-success>No tienes citas pendientes por el momento.</td></tr>
                                     @endif
                                 </tbody>
                             </table>
