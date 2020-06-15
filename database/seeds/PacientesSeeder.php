@@ -55,7 +55,7 @@ class PacientesSeeder extends Seeder
                 'telefono'  =>      '11992834'
             ],
             [
-                'nss'       =>      '212235',
+                'nss'       =>      '222235',
                 'nombre'    =>      'Jorge',
                 'aPaterno'  =>      'Nava',
                 'aMaterno'  =>      'Herrera',

@@ -23,8 +23,8 @@ class SesionPacienteController extends Controller
             return view::make('paciente.solicitarCita')
                                 ->with('horarios',$horarios)
                                 ->with('fechas',$fechas)
-                                ->with('nss',$request->nss_paciente)
-                                ->with('nombre',$paciente->value('nombre'));
+                                ->with('nombre',$paciente->value('nombre'))
+                                ->with('nss',$paciente->value('nss'));
         }
         else{
             return view::make('paciente.login')->with('message','Ingresa correctamente tu NSS y/o contraseña.');

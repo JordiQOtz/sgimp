@@ -33,6 +33,9 @@ class CitasController extends Controller
             ->update(['disponibilidad'=>0]);
         $cita->id_paciente = $nss;
         $cita->save();
-        return view('paciente.solicitarCita');
+        $paciente = DB::table('pacientes')
+            ->where('nss',$nss)->get();
+        return view('paciente.solicitarCita')
+            ->with('nss',$nss);
     }
 }
