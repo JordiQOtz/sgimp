@@ -17,22 +17,29 @@
                     </div>
                     <div class="card-body">
                         <h2>Iniciar sesión</h2>
+                        @if($message ?? '')
+                            <div class="alert alert-danger">
+                                <ul>
+                                    <li>{{$message}}</li>
+                                </ul>
+                            </div>
+                        @endif
                         <div class="container">
-                            <form action="{{route('paciente.login')}}" method="post">
+                            <form method="post">
                                 @csrf
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label" for="NSS">NSS</label>
+                                    <label class="col-sm-2 col-form-label" for="nss_paciente">NSS:</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" type="text" name="nss" id="nss" required>
+                                        <input class="form-control" type="text" name="nss_paciente" id="nss_paciente" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-2" for="pass_pac">Password</label>
+                                    <label class="col-sm-2" for="pass_paciente">Contraseña:</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" type="password" name="pass_med" id="pass_med" required>
+                                        <input class="form-control" type="password" name="pass_paciente" id="pass_paciente" required>
                                     </div>
                                 </div>
-                                <input class ="btn btn-primary floa" type="submit" value="Iniciar sesión">
+                                <input class ="btn btn-primary" type="submit" value="Iniciar sesión">
                                 <a href="{{route('home')}}" class="btn btn-danger">Cancelar</a>
                             </form>
                         </div>

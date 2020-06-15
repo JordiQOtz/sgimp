@@ -25,13 +25,9 @@ Route::get('medico/login',function(){
     return view('medico.login');
 })->name('medico.login');
 
-Route::post('paciente/login',function(){
-    return redirect()->route('paciente.solicitarCita'); //(probando vista) DEBE TENER VISTA: 'paciente.login'
-})->name('paciente.login');
+Route::post('paciente/login','SesionPacienteController@login')->name('paciente.login');
 
-Route::post('medico/login',function(){
-    return redirect()->route('medico.verCitas'); //(probando vista) DEBE TENER VISTA: 'medico.login'
-})->name('medico.login');
+Route::post('medico/login','SesionMedicoController@login')->name('medico.login');
 
 Route::get('paciente/solicitarCita',function(){
     return view('paciente.solicitarCita');
@@ -41,4 +37,12 @@ Route::get('medico/verCitas',function(){
     return view('medico.verCitas');
 })->name('medico.verCitas');
 
+Route::get('cita/delete/{id}','CitasController@delete');
+
+Route::get('cita/create/{id}/{nss}','CitasController@create');
+
 Route::get('/user', 'UserController@index');
+
+Route::get('/sessions',function(){
+    return $request->session()->all();
+});

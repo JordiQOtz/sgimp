@@ -18,29 +18,54 @@
                     <div class="card-body">
 
                         <h2>Horarios disponibles para cita</h2>
-
+                        @if($nombre ?? '')
+                            <div class="alert alert-success">
+                                <h3>Bienvenid@, {{$nombre}}.</h3>
+                            </div>
+                        @endif
                         <div class="container">
-                            <label class="" for="NSS">Seleccionar fecha:</label>
+                                <label class="" for="fechaCita">Filtrar por fecha:</label>
 
                                 <select name="fecha" id="fecha">
-                                    <option value="1">Lunes 18-Mayo-2020</option>
+                                    <option value="">Ver todas</option>
+                                    @if($fechas ?? '')
+                                        @foreach($fechas as $f)
+                                            <option value="">{{$f->dia}}</option>
+                                            out $f;
+                                        @endforeach
+                                    @endif
+                                    <option value="">*Lunes 18-Mayo-2020</option>
                                 </select>
 
-                                <a href="" class="btn btn-secondary">Buscar</a>
+                                <a href="" class="btn btn-primary btn-sm">Buscar</a>
                                 <br><br>
 
                                 <table class="table table-hover">
                                     <thead>
+                                        <tr>
                                             <th>Médico</th>
                                             <th>Fecha</th>
                                             <th>Horario</th>
                                             <th></th>
+                                        </tr>
                                     </thead>
                                     <tbody>
-                                        <td>Dr. Victor González Torres</td>
-                                        <td>Lunes - 18/05/2020</td>
-                                        <td>07:00 - 08:00</td>
-                                        <td><a href="" class="btn btn-danger">Solicitar Cita</a></td>
+                                        <tr>
+                                            <td>*Dr. Victor González Torres</td>
+                                            <td>Lunes - 18/05/2020</td>
+                                            <td>07:00 - 08:00</td>
+                                            <td><a href="" class="btn btn-outline-danger btn-sm">Solicitar Cita</a></td>
+                                        </tr>
+                                        @if($horarios ?? '')
+                                            @foreach($horarios as $i)
+                                                <tr>
+                                                    <td>Dr(a). {{$i->medico->nombre}} {{$i->medico->aPaterno}} {{$i->medico->aMaterno}}</td>
+                                                    <td>{{$i->dia}}</td>
+                                                    <td>{{$i->hora}}:00 - {{($i->hora+1)}}:00</td>
+                                                    <td><a href="{{url('cita/create/'.$i->id_horario.'/'.$nss)}}" class="btn btn-outline-danger btn-sm">Solicitar Cita</a></td>
+                                                </tr>
+                                            @endforeach
+                                        @endif
                                     </tbody>
                                 </table>
                         </div>

@@ -17,17 +17,24 @@
                     </div>
                     <div class="card-body">
                         <h2>Iniciar sesión</h2>
+                        @if($message ?? '')
+                            <div class="alert alert-danger">
+                                <ul>
+                                    <li>{{$message}}</li>
+                                </ul>
+                            </div>
+                        @endif
                         <div class="container">
-                            <form action="{{route('medico.login')}}" method="post">
+                            <form method="post">
                                 @csrf
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label" for="usr_med">Usuario</label>
+                                    <label class="col-sm-2 col-form-label" for="usr_med">Usuario:</label>
                                     <div class="col-sm-10">
                                         <input class="form-control" type="text" name="usr_med" id="usr_med" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label" for="pass_pac">Password</label>
+                                    <label class="col-sm-2 col-form-label" for="pass_med">Contraseña:</label>
                                     <div class="col-sm-10">
                                         <input class="form-control" type="password" name="pass_med" id="pass_med" required>
                                     </div>

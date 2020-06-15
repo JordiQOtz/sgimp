@@ -13,12 +13,16 @@
                 <div class="card">
                     <div class="card-header">
                         <h1 class="float-left">SGIMP</h1>
-                        <h1 class="float-right"><small>PACIENTE</small></h1>
+                        <h1 class="float-right"><small>MÉDICO</small></h1>
                     </div>
                     <div class="card-body">
 
                         <h2>Citas pendientes</h2><br>
-
+                        @if($nombre ?? '')
+                            <div class="alert alert-success">
+                                <h3>Bienvenid@, {{$nombre}}.</h3>
+                            </div>
+                        @endif
                         <div class="container">
                             <label class="" for="NSS">Seleccionar fecha:</label>
                             <select name="fecha" id="fecha">
@@ -39,19 +43,30 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>1712395</td>
+                                        <td>*1712395</td>
                                         <td>Jorge Jiménez</td>
                                         <td>Lunes - 18/05/2020</td>
                                         <td>07:00 - 08:00</td>
                                         <td><a href="" class="btn btn-outline-danger btn-sm">Cancelar Cita</a></td>
                                     </tr>
                                     <tr>
-                                        <td>2871240</td>
+                                        <td>*2871240</td>
                                         <td>Víctor Gonzalez</td>
                                         <td>Lunes - 18/05/2020</td>
                                         <td>07:00 - 08:00</td>
                                         <td><a href="" class="btn btn-outline-danger btn-sm">Cancelar Cita</a></td>
                                     </tr>
+                                    @if($citas ?? '')
+                                        @foreach($citas as $i)
+                                            <tr>
+                                                <td>{{$i->id_paciente}}</td>
+                                                <td>{{$i->nombre}} {{$i->aPaterno}} {{$i->aMaterno}}</td>
+                                                <td>{{$i->dia}}</td>
+                                                <td>{{$i->hora}}:00 - {{($i->hora)+1}}:00</td>
+                                                <td><a href="{{url('cita/delete/'.$i->id_cita)}}" class="btn btn-outline-danger btn-sm">Cancelar Cita</a></td>
+                                            </tr>
+                                        @endforeach
+                                    @endif
                                 </tbody>
                             </table>
                         </div>
