@@ -1,5 +1,4 @@
-# SGIMP
-# Sistema Gestor de Información Médico-Paciente
+# SGIMP - Sistema Gestor de Información Médico-Paciente
 
 ## Repositorio en Github
 	https://github.com/JordiQOtz/sgimp
