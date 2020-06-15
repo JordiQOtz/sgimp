@@ -18,28 +18,26 @@ Levantar el servidor.
 ##### 2.2.1. Para linux
 Ejecutar los siguientes scripts en la terminal de linux:
 
-- php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-- php -r "if (hash_file('sha384', 'composer-setup.php') === 'e0012edf3e80b6978849f5eff0d4b4e4c79ff1609dd1e613307e16318854d24ae64f26d17af3ef0bf7cfb710ca74755a') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
-- php composer-setup.php --install-dir=bin
-- php -r "unlink('composer-setup.php');"
-
-Las 4 líneas de arriba harán en orden:
-
 - Descargar el instalador en el directorio 
+	php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 - Comprobar el SHA-384 del instalador
+	php -r "if (hash_file('sha384', 'composer-setup.php') === 'e0012edf3e80b6978849f5eff0d4b4e4c79ff1609dd1e613307e16318854d24ae64f26d17af3ef0bf7cfb710ca74755a') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
 - Ejecutar el instalador
+	php composer-setup.php --install-dir=bin
 - Eliminar el instalador
+	php -r "unlink('composer-setup.php');"
+
 	
 ##### 2.2.2 Para Windows
 Usando el instalador.
-Descargar y ejecutar [Composer-Setup.exe] (https://getcomposer.org/Composer-Setup.exe). Instalará la versión más reciente de Composer y configurará el PATH para que se pueda llamar desde cualquier directorio en la linea de comandos.
+Descargar y ejecutar [Composer-Setup.exe](https://getcomposer.org/Composer-Setup.exe). Instalará la versión más reciente de Composer y configurará el PATH para que se pueda llamar desde cualquier directorio en la linea de comandos.
 	
 #### 3. Instalar Laravel
 Ejecutar el comando:
 composer global require laravel/installer
 
 #### 4. Levantar el servidor
-Abrir una terminal en la ruta de la carpeta (ejemplo: '~RUTA~/sgimp').
+Abrir una terminal en la ruta de la carpeta (ejemplo: '*RUTA*/sgimp').
 Ejecutar el comando: php artisan serve
 *No terminar la ejecución del comando ya que esto parará al servidor*
 
