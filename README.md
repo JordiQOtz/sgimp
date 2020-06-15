@@ -1,8 +1,8 @@
 # SGIMP
 # Sistema Gestor de Información Médico-Paciente
 
-##Repositorio en Github
-	
+## Repositorio en Github
+	https://github.com/JordiQOtz/sgimp
 
 ## Instalación
 ### 1. Importar la base de datos
